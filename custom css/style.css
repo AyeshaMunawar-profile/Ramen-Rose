@@ -1,3 +1,11 @@
+:root{
+    --base-color: #e74c3c;
+    --base-color-dark:#c0392b;
+    --secondary-color: #f39c12;
+    --secondary-color-dark: #d68212;
+    --white-color: #ecf0f1;
+    --black-color : #343a40;
+}
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +13,73 @@
 }
 
 html{
-    background-color: white;
-    color: #343a40;
+    background-color: var(--white-color);
+    color: var(--black-color);
     font-family: 'Lato','Arial','sans-serif';
     font-size: 20px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
+}
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/*header section*/
+
+.hero-text{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--white-color);
+    font-size: 250%;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.hero-text-box{
+    position: absolute;
+    max-width: 1140px;
+    top: 50%;
+    left: 10%;
+}
+.header{
+background-image:  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url("../images/website-images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    transition: background-color 0.20s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited{
+background-color: var(--base-color);
+    color: var(--white-color);
+    border-radius: 200px;
+    border: 1px solid var(--base-color);
+    margin-right: 15px;
+}
+.btn-full:hover,
+.btn-full:active{
+    background-color: var(--base-color-dark);
+    color: var(--white-color);
+    border-color: var(--base-color-dark);
+}
+.btn-ghost:link,
+.btn-ghost:visited{
+    color: var(--white-color);
+    border-radius: 200px;
+    border: 1px solid var(--white-color);
+}
+.btn-ghost:hover,
+.btn-ghost:active{
+    border-color: var(--base-color-dark);
+    background-color: var(--base-color-dark);
 }
