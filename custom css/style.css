@@ -1,4 +1,8 @@
+/*--------------------------------------------------------*/
+/*Basic setup*/
+/*--------------------------------------------------------*/
 :root{
+    /* theme colours */
     --base-color: #e74c3c;
     --base-color-dark:#c0392b;
     --secondary-color: #f39c12;
@@ -6,6 +10,7 @@
     --white-color: #ecf0f1;
     --black-color : #343a40;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +25,19 @@ html{
     font-weight: 300;
     text-rendering: optimizeLegibility;
 }
+/*--------------------------------------------------------*/
+/*Reusable components*/
+/*--------------------------------------------------------*/
 .row{
     max-width: 1140px;
     margin: 0 auto;
 }
 
-/*header section*/
+/*--------------------------------------------------------*/
+/*Headers*/
+/*--------------------------------------------------------*/
 
-.hero-text{
+.heading-text{
     margin-top: 0;
     margin-bottom: 20px;
     color: var(--white-color);
@@ -40,7 +50,7 @@ html{
     position: absolute;
     max-width: 1140px;
     top: 50%;
-    left: 10%;
+    left: 20%;
 }
 .header{
 background-image:  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url("../images/website-images/hero.jpg");
@@ -49,13 +59,18 @@ background-image:  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url("../ima
     height: 100vh;
     width: 100vw;
 }
+
+/*--------------------------------------------------------*/
+/*Buttons*/
+/*--------------------------------------------------------*/
+
 .btn:link,
 .btn:visited{
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none;
-    transition: background-color 0.20s, border 0.2s, color 0.2s;
+    transition: background-color 0.30s, border 0.3s, color 0.3s;
 }
 
 .btn-full:link,
@@ -83,3 +98,7 @@ background-color: var(--base-color);
     border-color: var(--base-color-dark);
     background-color: var(--base-color-dark);
 }
+
+/*--------------------------------------------------------*/
+/*Navbar*/
+/*--------------------------------------------------------*/
