@@ -139,23 +139,40 @@ html {
 .menu {
     float: right;
     display: inline-block;
-    line-height: 5;
+    margin-top: 40px;
 }
 
 .menu li {
     list-style: none;
     display: inline-block;
     margin-left: 20px;
+    padding-bottom: 5px;
 }
 
 .menu li a {
     text-decoration: none;
     color: var(--white-color);
 }
-
-.menu li a:hover {
-
-    font-weight: 400;
+.btn-menu:link,
+.btn-menu:visited,
+.btn-book-table:link,
+.btn-book-table:visited,
+.btn-contact-us:link,
+.btn-contact-us:visited,
+.btn-about-us:link,
+.btn-about-us:visited{
+    border-bottom: 1px solid transparent;
+}
+.btn-menu:hover,
+.btn-menu:active,
+.btn-book-table:hover,
+.btn-book-table:active,
+.btn-contact-us:hover,
+.btn-contact-us:active,
+.btn-about-us:hover,
+.btn-about-us:active{
+border-bottom: 1px solid var(--secondary-color);
+    transition: border-bottom-color 0.5s;
 }
 
 .navbar {
@@ -223,7 +240,7 @@ html {
     text-decoration: none;
     color: var(--white-color);
     background-color: var(--base-color);
-
+width: 230px;
 }
 
 .dropdown-options li {
@@ -237,7 +254,8 @@ html {
 
 .dropdown-options li:hover {
     background-color: var(--base-color-dark);
-    transition: background-color 0.3s;
+    border-left: 5px solid var(--secondary-color);
+    transition: background-color 0.3s, border-left-width 0.5s;
 }
 
 .navbar-dropdown {
