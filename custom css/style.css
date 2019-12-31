@@ -1,14 +1,14 @@
 /*--------------------------------------------------------*/
 /*Basic setup*/
 /*--------------------------------------------------------*/
-:root{
+:root {
     /* theme colours */
     --base-color: #e74c3c;
-    --base-color-dark:#c0392b;
+    --base-color-dark: #c0392b;
     --secondary-color: #f39c12;
     --secondary-color-dark: #d68212;
     --white-color: #ecf0f1;
-    --black-color : #343a40;
+    --black-color: #343a40;
 }
 
 * {
@@ -17,27 +17,32 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     background-color: var(--white-color);
     color: var(--black-color);
-    font-family: 'Lato','Arial','sans-serif';
+    font-family: 'Lato', 'Arial', 'sans-serif';
     font-size: 20px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
 }
+
 /*--------------------------------------------------------*/
 /*Reusable components*/
 /*--------------------------------------------------------*/
-.row{
+.row {
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /*--------------------------------------------------------*/
 /*Headers*/
 /*--------------------------------------------------------*/
 
-.heading-text{
+.heading-text {
     margin-top: 0;
     margin-bottom: 20px;
     color: var(--white-color);
@@ -46,14 +51,16 @@ html{
     text-transform: uppercase;
     letter-spacing: 3px;
 }
-.hero-text-box{
+
+.hero-text-box {
     position: absolute;
     max-width: 1140px;
     top: 50%;
     left: 20%;
 }
-.header{
-background-image:  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url("../images/website-images/hero.jpg");
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/website-images/hero.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -65,7 +72,7 @@ background-image:  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url("../ima
 /*--------------------------------------------------------*/
 
 .btn:link,
-.btn:visited{
+.btn:visited {
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
@@ -74,27 +81,30 @@ background-image:  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url("../ima
 }
 
 .btn-full:link,
-.btn-full:visited{
-background-color: var(--base-color);
+.btn-full:visited {
+    background-color: var(--base-color);
     color: var(--white-color);
     border-radius: 200px;
     border: 1px solid var(--base-color);
     margin-right: 15px;
 }
+
 .btn-full:hover,
-.btn-full:active{
+.btn-full:active {
     background-color: var(--base-color-dark);
     color: var(--white-color);
     border-color: var(--base-color-dark);
 }
+
 .btn-ghost:link,
-.btn-ghost:visited{
+.btn-ghost:visited {
     color: var(--white-color);
     border-radius: 200px;
     border: 1px solid var(--white-color);
 }
+
 .btn-ghost:hover,
-.btn-ghost:active{
+.btn-ghost:active {
     border-color: var(--base-color-dark);
     background-color: var(--base-color-dark);
 }
@@ -102,3 +112,134 @@ background-color: var(--base-color);
 /*--------------------------------------------------------*/
 /*Navbar*/
 /*--------------------------------------------------------*/
+.logo {
+    height: 70px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.brand {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 200%;
+    float: left;
+    vertical-align: middle;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+.brand-name {
+    font-weight: 300;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.menu {
+    float: right;
+    display: inline-block;
+    line-height: 5;
+}
+
+.menu li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.menu li a:hover {
+
+    font-weight: 400;
+}
+
+.navbar {
+    padding: 10px 10px 0px 10px;
+}
+
+.user-image {
+    height: 50px;
+    width: auto;
+    padding-top: 10px;
+}
+
+.ui-icon {
+    color: var(--white-color);
+}
+
+.btn-sign-up:link,
+.btn-sign-up:visited {
+    background-color: var(--base-color);
+    border-radius: 200px;
+    transition: background-color 0.30s;
+    padding: 7px 15px;
+}
+
+.btn-sign-up:active,
+.btn-sign-up:hover {
+    background-color: var(--base-color-dark);
+    padding: 8px 17px;
+}
+
+.fa-shopping-cart,
+.fa-user-circle {
+    color: var(--base-color);
+    font-size: 20px;
+}
+
+.fa-shopping-cart:hover,
+.fa-user-circle:hover {
+    color: var(--base-color-dark);
+    font-size: 22px;
+    transition: background-color 0.3s, font-size 0.3s;
+}
+
+.fa-user-circle {
+    color: var(--base-color);
+    font-size: 25px;
+}
+
+.fa-user-circle:hover {
+    color: var(--base-color-dark);
+    font-size: 27px;
+    transition: background-color 0.3s, font-size 0.3s;
+
+}
+
+.dropdown-content {
+    position: relative;
+}
+
+.dropdown-options {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--base-color);
+
+}
+
+.dropdown-options li {
+    list-style: none;
+    padding: 13px 15px;
+}
+
+.dropdown-options li i {
+    margin-right: 10px;
+}
+
+.dropdown-options li:hover {
+    background-color: var(--base-color-dark);
+    transition: background-color 0.3s;
+}
+
+.navbar-dropdown {
+    padding: 0px 10px;
+}
