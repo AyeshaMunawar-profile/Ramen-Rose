@@ -153,6 +153,7 @@ html {
     text-decoration: none;
     color: var(--white-color);
 }
+
 .btn-menu:link,
 .btn-menu:visited,
 .btn-book-table:link,
@@ -160,9 +161,10 @@ html {
 .btn-contact-us:link,
 .btn-contact-us:visited,
 .btn-about-us:link,
-.btn-about-us:visited{
+.btn-about-us:visited {
     border-bottom: 1px solid transparent;
 }
+
 .btn-menu:hover,
 .btn-menu:active,
 .btn-book-table:hover,
@@ -170,8 +172,8 @@ html {
 .btn-contact-us:hover,
 .btn-contact-us:active,
 .btn-about-us:hover,
-.btn-about-us:active{
-border-bottom: 1px solid var(--secondary-color);
+.btn-about-us:active {
+    border-bottom: 1px solid var(--secondary-color);
     transition: border-bottom-color 0.5s;
 }
 
@@ -240,7 +242,7 @@ border-bottom: 1px solid var(--secondary-color);
     text-decoration: none;
     color: var(--white-color);
     background-color: var(--base-color);
-width: 230px;
+    width: 230px;
 }
 
 .dropdown-options li {
@@ -260,4 +262,43 @@ width: 230px;
 
 .navbar-dropdown {
     padding: 0px 10px;
+}
+
+/*Features section*/
+.feature-home-delivery,
+.feature-100-organic,
+.feature-our-food,
+.feature-dining-experience{
+    display: inline-block;
+    text-align: center;
+}
+.home-delivery,
+.organic,
+.our-food,
+.dining-experience{
+    text-align: center;
+}
+.feature-heading-section{
+    text-align: center;
+padding: 30px 0px;
+}
+.section-features i{
+    font-size: 300%;
+    color: var(--base-color);
+    margin-bottom: 10px;
+}
+.section-features i:hover{
+    color: var(--base-color-dark);
+}
+.features-details p{
+    height: 270px;
+    vertical-align: center;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px 15px;
+}
+.features-details p:hover{
+    height: 275px;
+   border: 2px solid var(--base-color);
+transition: height 0.5s, border 0.5s;
 }
