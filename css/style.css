@@ -126,7 +126,7 @@ html {
     float: left;
     vertical-align: middle;
     display: inline-block;
-    padding-top: 8px;
+    padding-top: 20px;
 }
 
 .brand-name {
@@ -154,6 +154,12 @@ html {
     color: var(--white-color);
 }
 
+.special-buttons{
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
 .btn-menu:link,
 .btn-menu:visited,
 .btn-book-table:link,
@@ -196,38 +202,32 @@ html {
     background-color: var(--base-color);
     border-radius: 200px;
     transition: background-color 0.30s;
-    padding: 7px 15px;
+    padding: 5px 15px;
 }
 
 .btn-sign-up:active,
 .btn-sign-up:hover {
     background-color: var(--base-color-dark);
-    padding: 8px 17px;
+    padding: 6px 17px;
+}
+.btn-user{
+    padding-bottom: 0px;
 }
 
-.fa-shopping-cart,
-.fa-user-circle {
-    color: var(--base-color);
-    font-size: 20px;
+.ion-ios-cart-outline,
+.ion-ios-contact-outline{
+    color: var(--white-color);
+    font-size: 35px;
+}
+.ion-ios-cart-outline:hover,
+.ion-ios-contact-outline:hover {
+    color: var(--secondary-color);
+    transition: background-color 0.3s;
 }
 
-.fa-shopping-cart:hover,
-.fa-user-circle:hover {
-    color: var(--base-color-dark);
-    font-size: 22px;
-    transition: background-color 0.3s, font-size 0.3s;
-}
-
-.fa-user-circle {
-    color: var(--base-color);
-    font-size: 25px;
-}
-
-.fa-user-circle:hover {
-    color: var(--base-color-dark);
-    font-size: 27px;
-    transition: background-color 0.3s, font-size 0.3s;
-
+.sign-up{
+    padding-bottom: 0px;
+    padding-top: 10px;
 }
 
 .dropdown-content {
