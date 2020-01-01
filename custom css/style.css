@@ -265,40 +265,42 @@ html {
 }
 
 /*Features section*/
+.features {
+    display: flex;
+}
+
 .feature-home-delivery,
 .feature-100-organic,
 .feature-our-food,
-.feature-dining-experience{
+.feature-dining-experience {
     display: inline-block;
     text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
 }
-.home-delivery,
-.organic,
-.our-food,
-.dining-experience{
+
+.feature-heading-section {
     text-align: center;
+    padding: 30px 0px;
 }
-.feature-heading-section{
-    text-align: center;
-padding: 30px 0px;
+
+.feature-heading {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
-.section-features i{
+
+.section-features i {
     font-size: 300%;
     color: var(--base-color);
+    margin-bottom: 30px;
+}
+
+.section-features i:hover {
+    color: var(--secondary-color);
+    font-size: 303%;
+}
+
+.section-features h3 {
     margin-bottom: 10px;
-}
-.section-features i:hover{
-    color: var(--base-color-dark);
-}
-.features-details p{
-    height: 270px;
-    vertical-align: center;
-    border-radius: 10px;
-    background-color: white;
-    padding: 15px 15px;
-}
-.features-details p:hover{
-    height: 275px;
-   border: 2px solid var(--base-color);
-transition: height 0.5s, border 0.5s;
 }
