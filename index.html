@@ -5,9 +5,10 @@
     <title>Ramen Rose</title>
     <link rel="icon" href="images/favicon/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900&display=swap" rel="stylesheet">
-    <link href="normalize%20css/normalize.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/grid.css " rel="stylesheet" type="text/css">
+    <link href="css/ionicons.min.css " rel="stylesheet" type="text/css">
 </head>
 <body>
 <header class="header">
@@ -22,28 +23,33 @@
                 <li class="btn-book-table"><a href="html/book-table.html">Book Table</a></li>
                 <li class="btn-contact-us"><a href="html/contact-us.html">Contact Us</a></li>
                 <li class="btn-about-us"><a href="html/about.html">About us</a></li>
-                <li class="btn-cart"><a href="html/cart.html"><i class="fas fa-shopping-cart"></i>
+                    <ul class="special-buttons">
+                <li class="btn-cart"><a href="html/cart.html"><i class="ion-ios-cart-outline"></i>
                 </a></li>
-                <li><a href="#" class="btn-sign-up">Sign up
+                <li class="sign-up"><a href="#" class="btn-sign-up">Sign up
                 </a></li>
-                <!--            User account if user has signed in-->
-                <!--            <li class="btn-user"><a href="#"><i class="fas fa-user-circle"></i>-->
-                <!--            </a>-->
-                <!--               </li>-->
+
+                <!-- User account if user has signed in-->
+<!--                <li ><a href="#" class="btn-user"><i class="ion-ios-contact-outline"></i>-->
+<!--                </a></li>-->
+
+                    </ul>
             </ul>
         </div>
     </nav>
+
+
     <!-- User account Drop down menu-->
-    <!--    <nav class="navbar-dropdown">-->
-    <!--        <div class="row dropdown-content">-->
-    <!--            <ul class="dropdown-options">-->
-    <!--                <li><a class="profile"><i class="fas fa-user-edit"></i>Profile</a></li>-->
-    <!--                <li><a class="offers"><i class="fas fa-tags"></i>Offers</a></li>-->
-    <!--                <li><a class="profile"><i class="fas fa-unlock-alt"></i>Change Password</a></li>-->
-    <!--                <li><a class="log-out"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>-->
-    <!--            </ul>-->
-    <!--        </div>-->
-    <!--    </nav>-->
+<!--        <nav class="navbar-dropdown">-->
+<!--            <div class="row dropdown-content">-->
+<!--                <ul class="dropdown-options">-->
+<!--                    <li><a class="profile"><i class="fas fa-user-edit"></i>Profile</a></li>-->
+<!--                    <li><a class="offers"><i class="fas fa-tags"></i>Offers</a></li>-->
+<!--                    <li><a class="profile"><i class="fas fa-unlock-alt"></i>Change Password</a></li>-->
+<!--                    <li><a class="log-out"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </nav>-->
 
 
     <div class="hero-text-box">
@@ -62,13 +68,13 @@
     </div>
     <div class="row features">
         <div class="col span-1-of-4 feature-home-delivery">
-            <i class="fa fa-motorcycle"></i>
+            <i class="ion-home"></i>
             <h3 class="feature-home-delivery-heading">Home Delivery</h3>
             <p>You're only 20 minutes away from your delicious and super healthy meals delivered right to your home </p>
 
         </div>
         <div class="col span-1-of-4 feature-100-organic">
-            <i class="fab fa-envira"></i>
+            <i class="ion-leaf"></i>
             <h3 class="feature-100-organic-heading">100% organic</h3>
             <p>All our vegetables are fresh, organic and local. Animals are raised without added hormones or
                 antibiotics.
@@ -76,7 +82,7 @@
 
         </div>
         <div class="col span-1-of-4 feature-our-food">
-            <i class="fa fa-fish"></i>
+            <i class="ion-wineglass"></i>
             <h3 class="feature-our-food-heading">Our Food</h3>
             <p>With culinary inspirations from both Japan and Pakistan our menus offer robust dining options.
                 Japanese tempura and sushi; Pakistani Mughlai Cuisine and BAR B Q; Vegetarian, vegan or gluten
@@ -85,7 +91,7 @@
 
         </div>
         <div class="col span-1-of-4 feature-dining-experience">
-            <i class="fa fa-utensils"></i>
+            <i class="ion-spoon"></i>
             <h3 class="feature-dining-experience-heading">Dining Experience</h3>
             <p>Ramen Rose offers a unique blend of Japanese and pakistani
                 cuisine with fine
@@ -96,10 +102,7 @@
 
 </section>
 </body>
-<script src="custom%20js/index.js" rel="script"></script>
+<script src="js/index.js" rel="script"></script>
 <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/6c3069d10e.js" crossorigin="anonymous"></script>
+        src="js/jquery.waypoints.min.js"></script>
 </html>
