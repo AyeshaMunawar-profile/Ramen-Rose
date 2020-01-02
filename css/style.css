@@ -41,15 +41,18 @@ html {
 /*--------------------------------------------------------*/
 /*Headers*/
 /*--------------------------------------------------------*/
-
+.heading-text,
+.feature-heading{
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 .heading-text {
     margin-top: 0;
     margin-bottom: 20px;
     color: var(--white-color);
     font-size: 250%;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    word-spacing: 4px;
 }
 
 .hero-text-box {
@@ -288,18 +291,36 @@ html {
 .feature-heading {
     margin-bottom: 20px;
     margin-top: 70px;
+    font-size: 180%;
 }
+.feature-heading:after{
+    content: "";
+    height: 2px;
+    display: block;
+    background-color: var(--secondary-color);
+    width: 100px;
+    margin: 20px auto;
 
+}
+.section-features p{
+    line-height: 145%;
+}
+.feature-long-text{
+    width: 70%;
+    margin-left: 15%;
+}
 .section-features i {
     font-size: 300%;
     color: var(--base-color);
     margin-bottom: 30px;
+    word-spacing: 2px;
 }
 
 .section-features i:hover {
-    color: var(--secondary-color);
+    color: var(--base-color-dark);
     font-size: 303%;
 }
+
 
 .section-features h3 {
     margin-bottom: 10px;
