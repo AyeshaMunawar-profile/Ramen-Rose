@@ -243,11 +243,16 @@ html {
     font-size: 40%;
     padding: 3px;
 }
+
 .cart-bubble-text,
 .user-bubble-text{
     position: absolute;
     padding: 5px 7px 5px 7px;
     height: auto;
+}
+.cart-bubble-text:hover,
+.user-bubble-text:hover{
+    background-color: var(--base-color-dark);
 }
 .offers-bubble-text{
     background-color: var(--white-color);
@@ -332,7 +337,8 @@ html {
 }
 .heading-3{
 font-size: 110%;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     letter-spacing: normal;
 }
 .feature-heading-section {
@@ -355,9 +361,6 @@ font-size: 110%;
 
 }
 
-.section-features h3 {
-    margin-bottom: 10px;
-}
 .section-features p{
     line-height: 145%;
     font-size: 90%;
@@ -380,4 +383,25 @@ font-size: 110%;
     font-size: 303%;
 }
 
-
+/*----------------------------------------------------------------*/
+/*------------------------GALLERY SECTION--------------------------*/
+/*----------------------------------------------------------------*/
+.section-favourite-meals{
+    text-align: center;
+}
+.section-favourite-meals h3{
+    margin-top: 20px;
+}
+.favourite-meals-heading{
+    text-align: center;
+}
+.galley-image{
+    width: 100%;
+    height: auto;
+}
+.section-favourite-meals li{
+    display: inline-block;
+}
+.section-favourite-meals figure{
+    margin: 10px 0px ;
+}
