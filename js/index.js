@@ -1,34 +1,50 @@
-// App data Controller
-// Saves data and retrives data
-let DATACRL = (function () {
+// Use IFFE (Imediatly invoked function expression to store the private variables and functions
+// IFFE for App controller , UI controller and Data Controller
+// Description :
+// After execution of each outer function i.e data controller , ui controller and app controller respective closures are created
+// only interfaces of these functions i.e the object containing functions returned by each of them has the access to
+// the closures of them thus creating data encapsulation for inner functionality and private variables
+// and avoid unnecessary pollution of global scope by each controller
+
+
+// Data Controller
+// Saves data and retrieves data
+let dataController = (function () {
     return {};
 })();
+
+
 // UI controller
 // manipulate the UI data and gets data from UI
-let UICRL = (function () {
+let uiController = (function () {
     let DOMStrings = {
-        imageCaption: ".image-caption"
+        sectionFavouriteMeals: ".section-favourite-meals"
     };
     return {
-        DOMStrings : DOMStrings
+        getDOMStrings: function () {
+            return DOMStrings;
+        }
     };
 })();
-// App Crl controls the overall app
+
+
+// App Controller controls the overall app
 // Communicate between data controller and UI controller
-let APPCRL = (function (dataCrl, uiCrl) {
-    let DOMStrings = uiCrl.DOMStrings;
-    let eventListeners = {
-        favouriteMealsGallery: null
-    };
+let controller = (function (dataCrl, uiCrl) {
+    let DOMStrings = uiCrl.getDOMStrings();
+
+
     initializeEventListeners = function () {
-eventListeners.favouriteMealsGallery = document.querySelector(DOMStrings.imageCaption);
+        // event listeners for hovering over any image in favourite meals gallery
+        document.querySelector(DOMStrings.sectionFavouriteMeals).addEventListener('');
     };
+
+
     return {
         init: function () {
             initializeEventListeners();
-            // eventListeners.favouriteMealsGallery.style.visibility= "hidden";
         }
     };
-})(DATACRL, UICRL);
+})(dataController, uiController);
 
-APPCRL.init();
+controller.init();
