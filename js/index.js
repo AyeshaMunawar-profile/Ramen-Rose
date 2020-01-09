@@ -18,7 +18,8 @@ let dataController = (function () {
 // manipulate the UI data and gets data from UI
 let uiController = (function () {
     let DOMStrings = {
-        sectionFavouriteMeals: ".section-favourite-meals"
+        sectionFavouriteMeals: ".section-favourite-meals",
+        galleryImage: ".galley-image"
     };
     return {
         getDOMStrings: function () {
@@ -33,13 +34,14 @@ let uiController = (function () {
 let controller = (function (dataCrl, uiCrl) {
     let DOMStrings = uiCrl.getDOMStrings();
 
-
     initializeEventListeners = function () {
         // event listeners for hovering over any image in favourite meals gallery
-        document.querySelector(DOMStrings.sectionFavouriteMeals).addEventListener('');
+        document.querySelector(DOMStrings.galleryImage).addEventListener('onmouseover', showGalleryImageText);
     };
 
-
+    let showGalleryImageText = function (event) {
+    console.log(event.target);
+    };
     return {
         init: function () {
             initializeEventListeners();
