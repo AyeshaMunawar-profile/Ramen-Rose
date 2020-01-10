@@ -19,7 +19,8 @@ let dataController = (function () {
 let uiController = (function () {
     let DOMStrings = {
         sectionFavouriteMeals: ".section-favourite-meals",
-        galleryImage: ".galley-image"
+        galleryImage: ".galley-image",
+        imageCaption: "image-caption"
     };
     return {
         getDOMStrings: function () {
@@ -34,16 +35,33 @@ let uiController = (function () {
 let controller = (function (dataCrl, uiCrl) {
     let DOMStrings = uiCrl.getDOMStrings();
 
-    initializeEventListeners = function () {
+    // initialize all the event listners
+    let initializeEventListeners = function () {
         // event listeners for hovering over any image in favourite meals gallery
-        document.querySelector(DOMStrings.galleryImage).addEventListener('onmouseover', showGalleryImageText);
+        document.querySelector(DOMStrings.galleryImage).addEventListener('mouseover', showFavouriteMealCaption);
     };
 
-    let showGalleryImageText = function (event) {
-    console.log(event.target);
+    // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
+    let nodListForEach = function (list, callBackFunction) {
+        for (var i = 0; i < list.length; i++) {
+            callBackFunction(list[i], i);
+        }
+    };
+
+    let hideGalleryCaptions = function () {
+        let imageCaptionsList;
+        imageCaptionsList = document.getElementsByClassName(DOMStrings.imageCaption);
+        nodListForEach(imageCaptionsList, function (currentNode, index) {
+            currentNode.style.display = 'none';
+        });
+    };
+
+    let showFavouriteMealCaption = function (event) {
+        console.log(event.target);
     };
     return {
         init: function () {
+            hideGalleryCaptions();
             initializeEventListeners();
         }
     };
