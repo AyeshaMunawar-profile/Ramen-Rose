@@ -23,7 +23,7 @@ let uiController = (function () {
         imageCaption: ".image-caption",
         hidden: "hidden",
         show: ".show",
-        zoomImage: "zoom-image"
+        zoomImage: "zoom-image",
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
     let nodeListForEach = function (list, callBackFunction) {
@@ -40,6 +40,8 @@ let uiController = (function () {
         hideAllGalleryCaptions: function () {
             $(document).ready(function () {
                 $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
+                // $(DOMStrings.imageCaption).fadeOut(10);
+
             });
         },
 
@@ -58,16 +60,14 @@ let controller = (function (dataCrl, uiCrl) {
         // event listeners for hovering over any image in favourite meals gallery
         $(document).ready(function () {
             $(DOMStrings.galleryImage).hover(function () {
-                $(this).addClass(DOMStrings.zoomImage);
-                $(this)[0].parentNode.children[1].classList.remove(DOMStrings.hidden);
-            }, function () {
-                $(this)[0].classList.remove(DOMStrings.zoomImage);
-                $(this)[0].parentNode.children[1].classList.add(DOMStrings.hidden);
+                $(this).stop().toggleClass(DOMStrings.zoomImage);
+                $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
             });
 
         });
 
     };
+
 
     return {
         init: function () {
