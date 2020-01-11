@@ -18,12 +18,32 @@ let dataController = (function () {
 // manipulate the UI data and gets data from UI
 let uiController = (function () {
     let DOMStrings = {
-        sectionFavouriteMeals: ".section-favourite-meals"
+        sectionFavouriteMeals: ".section-favourite-meals",
+        galleryImage: ".galley-image",
+        imageCaption: ".image-caption",
+        hidden: "hidden",
+        show: ".show",
+        zoomImage: "zoom-image"
     };
+    // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
+    let nodeListForEach = function (list, callBackFunction) {
+        for (let i = 0; i < list.length; i++) {
+            callBackFunction(list[i], i);
+        }
+    };
+
+
     return {
         getDOMStrings: function () {
             return DOMStrings;
-        }
+        },
+        hideAllGalleryCaptions: function () {
+            $(document).ready(function () {
+                $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
+            });
+        },
+
+
     };
 })();
 
@@ -33,15 +53,25 @@ let uiController = (function () {
 let controller = (function (dataCrl, uiCrl) {
     let DOMStrings = uiCrl.getDOMStrings();
 
-
-    initializeEventListeners = function () {
+    // initialize all the event listners
+    let initializeEventListeners = function () {
         // event listeners for hovering over any image in favourite meals gallery
-        document.querySelector(DOMStrings.sectionFavouriteMeals).addEventListener('');
-    };
+        $(document).ready(function () {
+            $(DOMStrings.galleryImage).hover(function () {
+                $(this).addClass(DOMStrings.zoomImage);
+                $(this)[0].parentNode.children[1].classList.remove(DOMStrings.hidden);
+            }, function () {
+                $(this)[0].classList.remove(DOMStrings.zoomImage);
+                $(this)[0].parentNode.children[1].classList.add(DOMStrings.hidden);
+            });
 
+        });
+
+    };
 
     return {
         init: function () {
+            uiController.hideAllGalleryCaptions();
             initializeEventListeners();
         }
     };
