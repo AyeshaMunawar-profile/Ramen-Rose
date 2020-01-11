@@ -20,12 +20,30 @@ let uiController = (function () {
     let DOMStrings = {
         sectionFavouriteMeals: ".section-favourite-meals",
         galleryImage: ".galley-image",
-        imageCaption: "image-caption"
+        imageCaption: ".image-caption",
+        hidden: "hidden",
+        show: ".show",
+        zoomImage: "zoom-image"
     };
+    // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
+    let nodeListForEach = function (list, callBackFunction) {
+        for (let i = 0; i < list.length; i++) {
+            callBackFunction(list[i], i);
+        }
+    };
+
+
     return {
         getDOMStrings: function () {
             return DOMStrings;
-        }
+        },
+        hideAllGalleryCaptions: function () {
+            $(document).ready(function () {
+                $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
+            });
+        },
+
+
     };
 })();
 
@@ -38,30 +56,22 @@ let controller = (function (dataCrl, uiCrl) {
     // initialize all the event listners
     let initializeEventListeners = function () {
         // event listeners for hovering over any image in favourite meals gallery
-        document.querySelector(DOMStrings.galleryImage).addEventListener('mouseover', showFavouriteMealCaption);
-    };
+        $(document).ready(function () {
+            $(DOMStrings.galleryImage).hover(function () {
+                $(this).addClass(DOMStrings.zoomImage);
+                $(this)[0].parentNode.children[1].classList.remove(DOMStrings.hidden);
+            }, function () {
+                $(this)[0].classList.remove(DOMStrings.zoomImage);
+                $(this)[0].parentNode.children[1].classList.add(DOMStrings.hidden);
+            });
 
-    // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
-    let nodListForEach = function (list, callBackFunction) {
-        for (var i = 0; i < list.length; i++) {
-            callBackFunction(list[i], i);
-        }
-    };
-
-    let hideGalleryCaptions = function () {
-        let imageCaptionsList;
-        imageCaptionsList = document.getElementsByClassName(DOMStrings.imageCaption);
-        nodListForEach(imageCaptionsList, function (currentNode, index) {
-            currentNode.style.display = 'none';
         });
+
     };
 
-    let showFavouriteMealCaption = function (event) {
-        console.log(event.target);
-    };
     return {
         init: function () {
-            hideGalleryCaptions();
+            uiController.hideAllGalleryCaptions();
             initializeEventListeners();
         }
     };
