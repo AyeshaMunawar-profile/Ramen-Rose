@@ -9,6 +9,7 @@
     --secondary-color-dark: #d68212;
     --white-color: #ecf0f1;
     --black-color: #343a40;
+    --pure-black-color: #1d0500;
 }
 
 * {
@@ -156,6 +157,7 @@ html {
     float: right;
     display: inline-block;
     margin-top: 40px;
+    position: fixed;
 }
 
 .menu li {
@@ -240,6 +242,115 @@ html {
     margin-right: 30px;
 }
 
+@media only screen and (min-width: 940px) {
+    .btn-sidebar{
+        display: none;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+ /*media queries */
+@media only screen and (max-width: 940px){
+    .menu{
+        display: none;
+    }
+
+    .btn-sidebar {
+        font-size: 200%;
+        color: var(--base-color);
+        display: inline !important;
+        float: right;
+    }
+    .btn-sidebar:hover {
+        font-size: 215%;
+        transition: font-size 0.5s, color 0.6s;
+        color: var(--white-color);
+    }
+    .btn-toggle {
+        background-color: transparent;
+        border: none;
+        padding-top: 5px;
+        position: absolute;
+        right: 5vw;
+        top: 7vh;
+    }
+    .sidebar{
+        position: fixed;
+        font-size: 150%;
+        background-color: var(--pure-black-color);
+        z-index: 2;
+        width: 400px;
+        height:100vh;
+        float: right;
+        top: 0px;
+        right: 0px;
+        transition: 0.7s;
+    }
+    .sidebar-menu{
+        padding-top: 15vh;
+        /*padding-left: 1vw;*/
+    }
+    .sidebar-menu li{
+        margin-bottom: 5vh;
+        list-style: none;
+        color: var(--white-color);
+        padding-left: 30px;
+    }
+    .sidebar-menu a{
+        color: var(--white-color);
+        text-decoration: none;
+        padding-left: 20px;
+    }
+
+    .sidebar-menu li:hover{
+        color: var(--secondary-color);
+        text-decoration: none;
+        border-left: 4px solid var(--secondary-color);
+        transition: border-left 0.5s, padding-left 0.6s, color 0.6s;
+        cursor: pointer;
+    }
+    .btn-sidebar-my-account{
+        margin-bottom: 2vh !important;
+    }
+    .sidebar-account-dropdown{
+        padding-top: 10px;
+        padding-left: 3vw;
+    }
+    .sidebar-account-dropdown a{
+        font-size: 90%;
+        margin-bottom: 10px;
+        margin-left: 40px;
+        display: block;
+        color: var(--white-color);
+    }
+    .sidebar-account-dropdown i {
+        padding-right: 20px;
+    }
+    .sidebar-account-dropdown a:hover{
+        transition:  color 0.5s;
+        color: var(--secondary-color);
+        cursor: pointer;
+    }
+    .btn-close{
+        color: var(--white-color);
+        background-color: transparent;
+        border: none;
+        font-size: 120%;
+        position: absolute;
+        top: 5vh;
+        right: 5vw;
+
+        transition: transform .8s ease-in-out;
+    }
+    .btn-close:hover{
+        cursor: pointer;
+        transform:rotate(180deg);
+        color: var(--secondary-color);
+    }
+}
+
+
 /*--------------------------------------------------------*/
 /*------------------------NOTIFICATIONS BUBBLE --------------------------*/
 /*--------------------------------------------------------*/
@@ -275,7 +386,10 @@ html {
     font-size: 60%;
     height: auto;
 }
-
+.offers-bubble-text:hover{
+    background-color: var(--secondary-color);
+    color: var(--pure-black-color);
+}
 /*--------------------------------------------------------*/
 /*------------------------ICONS--------------------------*/
 /*--------------------------------------------------------*/
@@ -431,13 +545,15 @@ html {
     height: auto;
     opacity: 0.4;
 }
-.zoom-image{
+
+.zoom-image {
     transform: scale(1.3);
     transition: transform 0.5s;
     width: 100%;
     height: auto;
     opacity: 0.4;
 }
+
 .image-caption {
     width: 100%;
     height: 100%;
@@ -481,7 +597,7 @@ html {
 
 /*Gallery Media Queries*/
 
-@media only screen and (max-width: 750px) and (min-width: 600px) {
+@media only screen and (max-width: 900px) and (min-width: 600px) {
     .section-favourite-meals li {
         display: inline-block;
         width: 47%;
