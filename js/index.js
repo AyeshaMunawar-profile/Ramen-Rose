@@ -17,6 +17,7 @@ let dataController = (function () {
 // UI controller
 // manipulate the UI data and gets data from UI
 let uiController = (function () {
+
     let DOMStrings = {
         sectionFavouriteMeals: ".section-favourite-meals",
         galleryImage: ".galley-image",
@@ -24,6 +25,7 @@ let uiController = (function () {
         hidden: "hidden",
         show: ".show",
         zoomImage: "zoom-image",
+        menu: ".menu"
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
     let nodeListForEach = function (list, callBackFunction) {
@@ -32,20 +34,17 @@ let uiController = (function () {
         }
     };
 
-
     return {
+
         getDOMStrings: function () {
             return DOMStrings;
         },
+
         hideAllGalleryCaptions: function () {
             $(document).ready(function () {
                 $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
-                // $(DOMStrings.imageCaption).fadeOut(10);
-
             });
-        },
-
-
+        }
     };
 })();
 
@@ -53,6 +52,7 @@ let uiController = (function () {
 // App Controller controls the overall app
 // Communicate between data controller and UI controller
 let controller = (function (dataCrl, uiCrl) {
+
     let DOMStrings = uiCrl.getDOMStrings();
 
     // initialize all the event listners
@@ -63,11 +63,8 @@ let controller = (function (dataCrl, uiCrl) {
                 $(this).stop().toggleClass(DOMStrings.zoomImage);
                 $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
             });
-
         });
-
     };
-
 
     return {
         init: function () {
@@ -75,6 +72,7 @@ let controller = (function (dataCrl, uiCrl) {
             initializeEventListeners();
         }
     };
+
 })(dataController, uiController);
 
 controller.init();
