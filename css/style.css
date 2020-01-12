@@ -10,6 +10,7 @@
     --white-color: #ecf0f1;
     --black-color: #343a40;
     --pure-black-color: #1d0500;
+    --pure-black-color-opacity-1:rgba(29,5,0,0.9);
 }
 
 * {
@@ -278,7 +279,7 @@ html {
     .sidebar{
         position: fixed;
         font-size: 150%;
-        background-color: var(--pure-black-color);
+        background-color: var(--pure-black-color-opacity-1);
         z-index: 2;
         width: 400px;
         height:100vh;
