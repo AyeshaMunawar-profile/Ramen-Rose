@@ -158,7 +158,6 @@ html {
     float: right;
     display: inline-block;
     margin-top: 40px;
-    position: fixed;
 }
 
 .menu li {
@@ -368,11 +367,16 @@ html {
 
 .cart-bubble-text,
 .user-bubble-text {
-    position: absolute;
     padding: 5px 7px 5px 7px;
     height: auto;
 }
 
+.cart-bubble-text{
+    position: absolute;
+}
+.user-bubble-text{
+    float: right;
+}
 .cart-bubble-text:hover,
 .user-bubble-text:hover {
     background-color: var(--base-color-dark);
@@ -422,13 +426,14 @@ html {
 
 .dropdown-options {
     position: absolute;
-    right: 0px;
+    right: 20px;
     top: 0px;
     border-radius: 3px;
     text-decoration: none;
     color: var(--white-color);
     background-color: var(--base-color);
     width: 230px;
+    transition: height 0.5s;
 }
 
 .dropdown-options li {
@@ -447,6 +452,7 @@ html {
 }
 
 .navbar-dropdown {
+    display: none;
     padding: 0px 10px;
 }
 

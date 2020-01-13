@@ -13,7 +13,6 @@ let dataController = (function () {
     return {};
 })();
 
-
 // UI controller
 // manipulate the UI data and gets data from UI
 let uiController = (function () {
@@ -25,7 +24,11 @@ let uiController = (function () {
         hidden: "hidden",
         show: ".show",
         zoomImage: "zoom-image",
-        menu: ".menu"
+        menu: ".menu",
+        btnUser: ".btn-user",
+        navbarDropdown: ".navbar-dropdown",
+        sidebarMenu: ".sidebar",
+        btnSidebar: ".btn-sidebar"
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
     let nodeListForEach = function (list, callBackFunction) {
@@ -41,9 +44,16 @@ let uiController = (function () {
         },
 
         hideAllGalleryCaptions: function () {
-            $(document).ready(function () {
-                $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
-            });
+            $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
+        },
+
+        toggleAccountDropDownMenu: function () {
+            $(DOMStrings.navbarDropdown).toggle();
+        },
+
+        toggleSidebar: function () {
+            let toggleWidth = $(DOMStrings.sidebarMenu).width() === 400 ? "0px" : "400px";
+            $(DOMStrings.sidebarMenu).animate({width: toggleWidth});
         }
     };
 })();
@@ -58,13 +68,14 @@ let controller = (function (dataCrl, uiCrl) {
     // initialize all the event listners
     let initializeEventListeners = function () {
         // event listeners for hovering over any image in favourite meals gallery
-        $(document).ready(function () {
-            $(DOMStrings.galleryImage).hover(function () {
-                $(this).stop().toggleClass(DOMStrings.zoomImage);
-                $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
-            });
+        $(DOMStrings.galleryImage).hover(function () {
+            $(this).stop().toggleClass(DOMStrings.zoomImage);
+            $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
         });
+        $(DOMStrings.btnUser).click(uiController.toggleAccountDropDownMenu);
+        $(DOMStrings.btnSidebar).click(uiController.toggleSidebar);
     };
+
 
     return {
         init: function () {
@@ -75,4 +86,6 @@ let controller = (function (dataCrl, uiCrl) {
 
 })(dataController, uiController);
 
-controller.init();
+$(document).ready(function () {
+    controller.init();
+});
