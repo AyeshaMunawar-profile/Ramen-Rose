@@ -13,7 +13,6 @@ let dataController = (function () {
     return {};
 })();
 
-
 // UI controller
 // manipulate the UI data and gets data from UI
 let uiController = (function () {
@@ -41,9 +40,7 @@ let uiController = (function () {
         },
 
         hideAllGalleryCaptions: function () {
-            $(document).ready(function () {
-                $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
-            });
+            $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
         }
     };
 })();
@@ -58,11 +55,9 @@ let controller = (function (dataCrl, uiCrl) {
     // initialize all the event listners
     let initializeEventListeners = function () {
         // event listeners for hovering over any image in favourite meals gallery
-        $(document).ready(function () {
-            $(DOMStrings.galleryImage).hover(function () {
-                $(this).stop().toggleClass(DOMStrings.zoomImage);
-                $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
-            });
+        $(DOMStrings.galleryImage).hover(function () {
+            $(this).stop().toggleClass(DOMStrings.zoomImage);
+            $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
         });
     };
 
@@ -75,4 +70,6 @@ let controller = (function (dataCrl, uiCrl) {
 
 })(dataController, uiController);
 
-controller.init();
+$(document).ready(function () {
+    controller.init();
+});
