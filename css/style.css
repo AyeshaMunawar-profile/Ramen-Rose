@@ -270,7 +270,6 @@ html {
     .btn-toggle {
         background-color: transparent;
         border: none;
-        padding-top: 5px;
         position: absolute;
         right: 5vw;
         top: 7vh;
@@ -280,7 +279,7 @@ html {
         font-size: 150%;
         background-color: var(--pure-black-color-opacity-1);
         z-index: 2;
-        width: 400px;
+        width: 0px;
         height:100vh;
         float: right;
         top: 0px;
@@ -289,7 +288,6 @@ html {
     }
     .sidebar-menu{
         padding-top: 15vh;
-        /*padding-left: 1vw;*/
     }
     .sidebar-menu li{
         margin-bottom: 5vh;
@@ -333,6 +331,7 @@ html {
         cursor: pointer;
     }
     .btn-close{
+        display: none;
         color: var(--white-color);
         background-color: transparent;
         border: none;
@@ -340,7 +339,6 @@ html {
         position: absolute;
         top: 5vh;
         right: 5vw;
-
         transition: transform .8s ease-in-out;
     }
     .btn-close:hover{
