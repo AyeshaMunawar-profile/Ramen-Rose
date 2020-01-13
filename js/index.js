@@ -61,6 +61,7 @@ let controller = (function (dataCrl, uiCrl) {
         });
     };
 
+
     return {
         init: function () {
             uiController.hideAllGalleryCaptions();
