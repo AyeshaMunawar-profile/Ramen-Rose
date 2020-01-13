@@ -286,6 +286,10 @@ html {
         right: 0px;
         transition: 0.7s;
     }
+    .sidebar-menu-options{
+        display: none;
+        transition: width 0.5s ease-in-out;
+    }
     .sidebar-menu{
         padding-top: 15vh;
     }
@@ -309,6 +313,7 @@ html {
         cursor: pointer;
     }
     .btn-sidebar-my-account{
+
         margin-bottom: 2vh !important;
     }
     .sidebar-account-dropdown{
@@ -549,6 +554,7 @@ html {
     width: 100%;
     height: auto;
     opacity: 0.4;
+    cursor: pointer;
 }
 
 .zoom-image {
