@@ -426,13 +426,14 @@ html {
 
 .dropdown-options {
     position: absolute;
-    right: 0px;
+    right: 20px;
     top: 0px;
     border-radius: 3px;
     text-decoration: none;
     color: var(--white-color);
     background-color: var(--base-color);
     width: 230px;
+    transition: height 0.5s;
 }
 
 .dropdown-options li {
@@ -451,6 +452,7 @@ html {
 }
 
 .navbar-dropdown {
+    display: none;
     padding: 0px 10px;
 }
 

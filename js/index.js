@@ -24,7 +24,11 @@ let uiController = (function () {
         hidden: "hidden",
         show: ".show",
         zoomImage: "zoom-image",
-        menu: ".menu"
+        menu: ".menu",
+        btnUser: ".btn-user",
+        navbarDropdown: ".navbar-dropdown",
+        sidebarMenu: ".sidebar",
+        btnSidebar: ".btn-sidebar"
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
     let nodeListForEach = function (list, callBackFunction) {
@@ -41,6 +45,15 @@ let uiController = (function () {
 
         hideAllGalleryCaptions: function () {
             $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
+        },
+
+        toggleAccountDropDownMenu: function () {
+            $(DOMStrings.navbarDropdown).toggle();
+        },
+
+        toggleSidebar: function () {
+            let toggleWidth = $(DOMStrings.sidebarMenu).width() === 400 ? "0px" : "400px";
+            $(DOMStrings.sidebarMenu).animate({width: toggleWidth});
         }
     };
 })();
@@ -59,6 +72,8 @@ let controller = (function (dataCrl, uiCrl) {
             $(this).stop().toggleClass(DOMStrings.zoomImage);
             $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
         });
+        $(DOMStrings.btnUser).click(uiController.toggleAccountDropDownMenu);
+        $(DOMStrings.btnSidebar).click(uiController.toggleSidebar);
     };
 
 
