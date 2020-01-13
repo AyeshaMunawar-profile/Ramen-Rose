@@ -31,7 +31,8 @@ let uiController = (function () {
         btnSidebar: ".btn-sidebar",
         btnClose: ".btn-close",
         sidebarMenuContents: ".sidebar-menu",
-       sidebarAccountDropdown: ".sidebar-account-dropdown"
+       sidebarAccountDropdown: ".sidebar-account-dropdown",
+        sidebarMenuOptions: ".sidebar-menu-options"
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
     let nodeListForEach = function (list, callBackFunction) {
@@ -57,9 +58,10 @@ let uiController = (function () {
         toggleSidebar: function () {
             let toggleWidth = $(DOMStrings.sidebarMenu).width() === 400 ? "0px" : "400px";
             $(DOMStrings.sidebarMenu).stop().animate({width: toggleWidth},1,function(){
-
                 $(DOMStrings.btnClose).toggle(toggleWidth);
             });
+            $(DOMStrings.sidebarMenuOptions).stop().fadeToggle(toggleWidth).delay(500);
+
         }
     };
 })();
