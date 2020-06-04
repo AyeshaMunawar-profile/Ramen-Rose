@@ -582,7 +582,7 @@ html {
     z-index: 2;
     text-align: center;
     display: flex;
-    justify-content: center; /*horizonatally align at center*/
+    justify-content: center; /* horizonatally align at center*/
     align-items: center; /*vertically align at center*/
 }
 
@@ -615,6 +615,10 @@ html {
         display: inline-block;
         width: 47%;
     }
+    .section-features div{
+        display: inline-block;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -622,6 +626,10 @@ html {
         display: inline-block;
         width: 100%;
         margin-bottom: 5px;
+    }
+    .section-features div{
+        display: inline-block;
+        width: 100%;
     }
 }
 
