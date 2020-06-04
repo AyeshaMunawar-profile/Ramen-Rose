@@ -142,6 +142,7 @@ html {
     vertical-align: middle;
     display: inline-block;
     padding-top: 20px;
+
 }
 
 .brand-name {
@@ -242,7 +243,7 @@ html {
     margin-right: 30px;
 }
 
-@media only screen and (min-width: 940px) {
+@media only screen and (min-width: 1010px) {
     .btn-sidebar{
         display: none;
     }
@@ -251,7 +252,7 @@ html {
     }
 }
  /*media queries */
-@media only screen and (max-width: 940px){
+@media only screen and (max-width: 1010px){
     .menu{
         display: none;
     }
@@ -270,15 +271,16 @@ html {
     .btn-toggle {
         background-color: transparent;
         border: none;
-        position: absolute;
-        right: 5vw;
-        top: 7vh;
+        position: fixed;
+        z-index: 2;
+        right: 3vw;
+        top: 5vh;
     }
     .sidebar{
         position: fixed;
         font-size: 150%;
         background-color: var(--pure-black-color-opacity-1);
-        z-index: 2;
+        z-index: 3;
         width: 0px;
         height:100vh;
         float: right;

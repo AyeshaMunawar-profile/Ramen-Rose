@@ -60,7 +60,7 @@ let uiController = (function () {
             $(DOMStrings.sidebarMenu).stop().animate({width: toggleWidth},1,function(){
                 $(DOMStrings.btnClose).toggle(toggleWidth);
             });
-            $(DOMStrings.sidebarMenuOptions).stop().fadeToggle(toggleWidth).delay(500);
+            $(DOMStrings.sidebarMenuOptions).stop().fadeToggle(toggleWidth).delay(2000);
 
         }
     };
@@ -80,9 +80,7 @@ let controller = (function (dataCrl, uiCrl) {
             $(this).stop().toggleClass(DOMStrings.zoomImage);
             $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
         });
-        $(DOMStrings.btnUser).click(uiController.toggleAccountDropDownMenu);
-        $(DOMStrings.btnSidebar).click(uiController.toggleSidebar);
-        $(DOMStrings.btnClose).click(uiController.toggleSidebar);
+       
     };
 
 
