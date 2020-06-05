@@ -731,7 +731,15 @@ html {
     margin-right: 10px;
     margin-top: 50px;
 }
+.btn-app img:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 1px 9px 20px 9px rgba(29, 5, 0, 0.2);
 
+}
+.btn-app img:active{
+    transform: translateY(3px) scale(1);
+    box-shadow: 1px 9px 20px 9px rgba(29, 5, 0, 0.1);
+}
 /*Gallery Media Queries*/
 
 @media only screen and (max-width: 900px) and (min-width: 600px) {
