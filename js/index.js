@@ -6,7 +6,6 @@
 // the closures of them thus creating data encapsulation for inner functionality and private variables
 // and avoid unnecessary pollution of global scope by each controller
 
-
 // Data Controller
 // Saves data and retrieves data
 let dataController = (function () {
@@ -70,7 +69,6 @@ let uiController = (function () {
 // App Controller controls the overall app
 // Communicate between data controller and UI controller
 let controller = (function (dataCrl, uiCrl) {
-
     let DOMStrings = uiCrl.getDOMStrings();
 
     // initialize all the event listners
@@ -80,7 +78,9 @@ let controller = (function (dataCrl, uiCrl) {
             $(this).stop().toggleClass(DOMStrings.zoomImage);
             $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
         });
-       
+       $(DOMStrings.btnUser).click(uiController.toggleAccountDropDownMenu);
+       $(DOMStrings.btnSidebar).click(uiController.toggleSidebar);
+       $(DOMStrings.btnClose).click(uiController.toggleSidebar);
     };
 
 

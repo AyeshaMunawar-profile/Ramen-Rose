@@ -168,11 +168,11 @@ html {
     vertical-align: middle;
     display: inline-block;
     padding-top: 20px;
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: backwards;
-    animation-delay: 0.5s;
+    /*animation-name: fadeIn;*/
+    /*animation-duration: 0.5s;*/
+    /*animation-timing-function: ease-in-out;*/
+    /*animation-fill-mode: backwards;*/
+    /*animation-delay: 0.5s;*/
 }
 
 .brand-name {
@@ -190,10 +190,10 @@ html {
     display: inline-block;
     margin-top: 40px;
     animation-name: fadeIn;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: backwards;
-    animation-delay: 0.5s;
+    /*animation-duration: 0.5s;*/
+    /*animation-timing-function: ease-in-out;*/
+    /*animation-fill-mode: backwards;*/
+    /*animation-delay: 0.5s;*/
 }
 
 .menu li {
@@ -261,6 +261,7 @@ html {
 .btn-sign-up:hover {
     background-color: var(--base-color-dark);
     padding: 6px 17px;
+
 }
 
 .btn-user {
@@ -299,11 +300,6 @@ html {
         color: var(--base-color);
         display: inline !important;
         float: right;
-        animation-name: fadeIn;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: backwards;
-        animation-delay: 0.5s;
     }
 
     .btn-sidebar:hover {
