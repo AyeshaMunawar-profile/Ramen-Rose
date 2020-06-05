@@ -15,7 +15,7 @@ A website created using HTML5, CSS3, j query and java script. Its a website for 
 
 **languages, fonts and libraries used**
 1) HTML5 and CSS3
-2) javascript 
+2) Javascript 
 3) Jquery 
-4) ionicons for icons 
-5) google fonts 
+4) Ionicons for icons 
+5) Google fonts 

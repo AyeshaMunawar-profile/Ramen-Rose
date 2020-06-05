@@ -10,7 +10,7 @@
     --white-color: #ecf0f1;
     --black-color: #343a40;
     --pure-black-color: #1d0500;
-    --pure-black-color-opacity-1:rgba(29,5,0,0.9);
+    --pure-black-color-opacity-1: rgba(29, 5, 0, 0.9);
 }
 
 * {
@@ -53,6 +53,7 @@ html {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 /*--------------------------------------------------------*/
@@ -65,6 +66,10 @@ html {
     color: var(--white-color);
     font-size: 250%;
     word-spacing: 4px;
+    animation-name: fadeInMOverFromRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
 }
 
 .hero-text-box {
@@ -80,6 +85,7 @@ html {
     background-position: center;
     height: 100vh;
     width: auto;
+
 }
 
 /*--------------------------------------------------------*/
@@ -102,6 +108,11 @@ html {
     border-radius: 200px;
     border: 1px solid var(--base-color);
     margin-right: 15px;
+    animation-name: fadeInMOverFromBottom;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
 }
 
 .btn-full:hover,
@@ -116,6 +127,11 @@ html {
     color: var(--white-color);
     border-radius: 200px;
     border: 1px solid var(--white-color);
+    animation-name: fadeInMOverFromBottom;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
 }
 
 .btn-ghost:hover,
@@ -124,6 +140,16 @@ html {
     background-color: var(--base-color-dark);
 }
 
+.btn-full:hover,
+.btn-ghost:hover{
+    transform: translateY(-3px);
+    box-shadow: 2px 7px 10px 10px rgba(29, 5, 0, 0.7) ;
+}
+.btn-full:active,
+.btn-ghost:active{
+    transform: translateY(3px);
+    box-shadow: 2px 5px 7px 7px rgba(29, 5, 0, 0.3) ;
+}
 /*--------------------------------------------------------*/
 /*------------------------NAVBAR--------------------------*/
 /*--------------------------------------------------------*/
@@ -142,7 +168,11 @@ html {
     vertical-align: middle;
     display: inline-block;
     padding-top: 20px;
-
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
 }
 
 .brand-name {
@@ -159,6 +189,11 @@ html {
     float: right;
     display: inline-block;
     margin-top: 40px;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
 }
 
 .menu li {
@@ -244,16 +279,18 @@ html {
 }
 
 @media only screen and (min-width: 1010px) {
-    .btn-sidebar{
+    .btn-sidebar {
         display: none;
     }
-    .sidebar{
+
+    .sidebar {
         display: none;
     }
 }
- /*media queries */
-@media only screen and (max-width: 1010px){
-    .menu{
+
+/*media queries */
+@media only screen and (max-width: 1010px) {
+    .menu {
         display: none;
     }
 
@@ -262,12 +299,19 @@ html {
         color: var(--base-color);
         display: inline !important;
         float: right;
+        animation-name: fadeIn;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+        animation-delay: 0.5s;
     }
+
     .btn-sidebar:hover {
         font-size: 215%;
         transition: font-size 0.5s, color 0.6s;
         color: var(--white-color);
     }
+
     .btn-toggle {
         background-color: transparent;
         border: none;
@@ -275,69 +319,81 @@ html {
         z-index: 2;
         right: 3vw;
         top: 5vh;
+        margin-top: 12px;
     }
-    .sidebar{
+
+    .sidebar {
         position: fixed;
         font-size: 150%;
         background-color: var(--pure-black-color-opacity-1);
         z-index: 3;
         width: 0px;
-        height:100vh;
+        height: 100vh;
         float: right;
         top: 0px;
         right: 0px;
         transition: 0.7s;
     }
-    .sidebar-menu-options{
+
+    .sidebar-menu-options {
         display: none;
         transition: width 0.5s ease-in-out;
     }
-    .sidebar-menu{
+
+    .sidebar-menu {
         padding-top: 15vh;
     }
-    .sidebar-menu li{
+
+    .sidebar-menu li {
         margin-bottom: 5vh;
         list-style: none;
         color: var(--white-color);
         padding-left: 30px;
     }
-    .sidebar-menu a{
+
+    .sidebar-menu a {
         color: var(--white-color);
         text-decoration: none;
         padding-left: 20px;
     }
 
-    .sidebar-menu li:hover{
+    .sidebar-menu li:hover {
         color: var(--secondary-color);
         text-decoration: none;
         border-left: 4px solid var(--secondary-color);
         transition: border-left 0.5s, padding-left 0.6s, color 0.6s;
         cursor: pointer;
     }
-    .btn-sidebar-my-account{
+
+    .btn-sidebar-my-account {
 
         margin-bottom: 2vh !important;
     }
-    .sidebar-account-dropdown{
+
+    .sidebar-account-dropdown {
         padding-top: 10px;
         padding-left: 3vw;
     }
-    .sidebar-account-dropdown a{
+
+    .sidebar-account-dropdown a {
         font-size: 90%;
         margin-bottom: 10px;
         margin-left: 40px;
         display: block;
         color: var(--white-color);
     }
+
     .sidebar-account-dropdown i {
         padding-right: 20px;
     }
-    .sidebar-account-dropdown a:hover{
-        transition:  color 0.5s;
+
+    .sidebar-account-dropdown a:hover {
+        transition: color 0.5s;
         color: var(--secondary-color);
         cursor: pointer;
     }
-    .btn-close{
+
+    .btn-close {
         display: none;
         color: var(--white-color);
         background-color: transparent;
@@ -348,9 +404,10 @@ html {
         right: 5vw;
         transition: transform .8s ease-in-out;
     }
-    .btn-close:hover{
+
+    .btn-close:hover {
         cursor: pointer;
-        transform:rotate(180deg);
+        transform: rotate(180deg);
         color: var(--secondary-color);
     }
 }
@@ -376,12 +433,14 @@ html {
     height: auto;
 }
 
-.cart-bubble-text{
+.cart-bubble-text {
     position: absolute;
 }
-.user-bubble-text{
+
+.user-bubble-text {
     float: right;
 }
+
 .cart-bubble-text:hover,
 .user-bubble-text:hover {
     background-color: var(--base-color-dark);
@@ -396,10 +455,12 @@ html {
     font-size: 60%;
     height: auto;
 }
-.offers-bubble-text:hover{
+
+.offers-bubble-text:hover {
     background-color: var(--secondary-color);
     color: var(--pure-black-color);
 }
+
 /*--------------------------------------------------------*/
 /*------------------------ICONS--------------------------*/
 /*--------------------------------------------------------*/
@@ -608,6 +669,57 @@ html {
     position: relative;
 }
 
+/*--------------------------------------------------------*/
+/*------------------------ WHAT MAKES US DIFFERENT ? --------------------------*/
+/*--------------------------------------------------------*/
+.quality-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.quality-box:last-child {
+    padding-left: 3%;
+    margin-top: 90px;
+}
+
+.app-screen {
+    width: 80%;
+}
+
+.quality {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quality div {
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color-dark);
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.quality p {
+    width: 100%;
+}
+.btn-app{
+    text-decoration: none;
+}
+.btn-app img {
+    height: 70px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+
 /*Gallery Media Queries*/
 
 @media only screen and (max-width: 900px) and (min-width: 600px) {
@@ -615,22 +727,103 @@ html {
         display: inline-block;
         width: 47%;
     }
-    .section-features div{
+
+    .quality-box:first-child {
         display: inline-block;
         width: 100%;
+        text-align: center;
+    }
+
+    .app-screen {
+        width: 400px;
+    }
+    .btn-app{
+        display: block;
+        text-align: center;
+    }
+    .btn-app img {
+        height: 100px;
+        margin: auto auto 20px auto;
     }
 }
 
+@media only screen and (max-width: 1090px) and (min-width: 900px){
+    .btn-app img {
+        height: 60px;
+        margin: 0px auto 0px auto;
+    }
+    .quality-box:last-child {
+        padding-left: 3%;
+        margin-top: 50px;
+    }
+}
 @media only screen and (max-width: 600px) {
     .section-favourite-meals li {
         display: inline-block;
         width: 100%;
         margin-bottom: 5px;
     }
-    .section-features div{
+
+    .quality-box:first-child {
         display: inline-block;
         width: 100%;
+        text-align: center;
+    }
+
+    .btn-app img {
+        height: 58px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .section-features div {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .quality-box:last-child {
+        width: 100%;
+        padding: 30px;
     }
 }
 
 
+/*Animations*/
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMOverFromRight {
+    0%{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    80%{
+        opacity: 0.8;
+        transform: translateX(-30px);
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeInMOverFromBottom {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    80%{
+        opacity: 0.8;
+        transform: translateY(-10px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
