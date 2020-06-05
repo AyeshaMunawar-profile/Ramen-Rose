@@ -25,13 +25,18 @@ let uiController = (function () {
         zoomImage: "zoom-image",
         menu: ".menu",
         btnUser: ".btn-user",
+        user: ".user",
         navbarDropdown: ".navbar-dropdown",
         sidebarMenu: ".sidebar",
         btnSidebar: ".btn-sidebar",
         btnClose: ".btn-close",
         sidebarMenuContents: ".sidebar-menu",
-       sidebarAccountDropdown: ".sidebar-account-dropdown",
-        sidebarMenuOptions: ".sidebar-menu-options"
+        sidebarAccountDropdown: ".sidebar-account-dropdown",
+        sidebarMenuOptions: ".sidebar-menu-options",
+        btnApp: ".btn-app",
+        appScreen: ".app-screen",
+        dropDownMenuOptions:".dropdown-options",
+        dropDownMenuOption: ".dropdown-option"
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
     let nodeListForEach = function (list, callBackFunction) {
@@ -39,7 +44,6 @@ let uiController = (function () {
             callBackFunction(list[i], i);
         }
     };
-
     return {
 
         getDOMStrings: function () {
@@ -50,13 +54,19 @@ let uiController = (function () {
             $(DOMStrings.imageCaption).addClass(DOMStrings.hidden);
         },
 
+
         toggleAccountDropDownMenu: function () {
-            $(DOMStrings.navbarDropdown).toggle();
+            let toggleHeight = $(DOMStrings.dropDownMenuOptions).height() === 200 ? "0px" : "200px";
+            $(DOMStrings.dropDownMenuOptions).stop().animate({height: toggleHeight}, 1, function () {
+                $(DOMStrings.dropDownMenuOptions).stop().fadeToggle(toggleHeight).delay(2000);
+
+                // $(DOMStrings.user).toggle(toggleHeight);
+            });
         },
 
         toggleSidebar: function () {
             let toggleWidth = $(DOMStrings.sidebarMenu).width() === 400 ? "0px" : "400px";
-            $(DOMStrings.sidebarMenu).stop().animate({width: toggleWidth},1,function(){
+            $(DOMStrings.sidebarMenu).stop().animate({width: toggleWidth}, 1, function () {
                 $(DOMStrings.btnClose).toggle(toggleWidth);
             });
             $(DOMStrings.sidebarMenuOptions).stop().fadeToggle(toggleWidth).delay(2000);
@@ -78,9 +88,9 @@ let controller = (function (dataCrl, uiCrl) {
             $(this).stop().toggleClass(DOMStrings.zoomImage);
             $("#" + $(this)[0].parentNode.children[1].id).stop().toggleClass(DOMStrings.hidden);
         });
-       $(DOMStrings.btnUser).click(uiController.toggleAccountDropDownMenu);
-       $(DOMStrings.btnSidebar).click(uiController.toggleSidebar);
-       $(DOMStrings.btnClose).click(uiController.toggleSidebar);
+        $(DOMStrings.btnUser).click(uiController.toggleAccountDropDownMenu);
+        $(DOMStrings.btnSidebar).click(uiController.toggleSidebar);
+        $(DOMStrings.btnClose).click(uiController.toggleSidebar);
     };
 
 
@@ -96,3 +106,4 @@ let controller = (function (dataCrl, uiCrl) {
 $(document).ready(function () {
     controller.init();
 });
+
