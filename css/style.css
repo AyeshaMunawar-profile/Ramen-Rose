@@ -257,15 +257,22 @@ html {
     border-radius: 200px;
     transition: background-color 0.30s;
     padding: 5px 15px;
+    font-weight: 400;
 }
 
 .btn-sign-up:active,
 .btn-sign-up:hover {
     background-color: var(--base-color-dark);
     padding: 6px 17px;
-
+    box-shadow: 0px 0px 21px 29px rgba(29, 5, 0, 0.5);
+    transition: all 0.3s ease-in-out;
 }
-
+.btn-sign-up:active{
+    color: var(--base-color-dark);
+    background-color: var(--white-color);
+    box-shadow: 0px 0px 10px 10px rgba(29, 5, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
 .btn-user {
     padding-bottom: 0px;
 }
@@ -369,7 +376,7 @@ html {
         z-index: 2;
         right: 3vw;
         top: 5vh;
-        margin-top: 12px;
+        margin-top: 14px;
     }
 
     .sidebar {
@@ -494,6 +501,7 @@ html {
 .cart-bubble-text:hover,
 .user-bubble-text:hover {
     background-color: var(--base-color-dark);
+
 }
 
 .offers-bubble-text {
@@ -518,15 +526,24 @@ html {
 .ion-ios-cart-outline,
 .ion-ios-contact-outline {
     color: var(--white-color);
-    font-size: 35px;
+    font-size: 36px;
 }
 
 .ion-ios-cart-outline:hover,
 .ion-ios-contact-outline:hover {
-    color: var(--secondary-color);
-    transition: background-color 0.3s;
+    box-shadow: 0px 0px 21px 29px rgba(29, 5, 0, 0.5);
+    border-radius: 50%;
+    font-size: 37px;
+    transition: all 0.3s ease-in-out;
 }
-
+.ion-ios-cart-outline:active,
+.ion-ios-contact-outline:active{
+    color: var(--secondary-color);
+    box-shadow: 0px 0px 10px 10px rgba(29, 5, 0, 0.3);
+    border-radius: 50%;
+    font-size: 36px;
+    transition: all 0.3s ease-in-out;
+}
 .ui-icon {
     color: var(--white-color);
 }
