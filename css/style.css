@@ -8,6 +8,7 @@
     --secondary-color: #f39c12;
     --secondary-color-dark: #d68212;
     --white-color: #ecf0f1;
+    --white-color-light: #f4f8f9;
     --black-color: #343a40;
     --pure-black-color: #1d0500;
     --pure-black-color-opacity-1: rgba(29, 5, 0, 0.9);
@@ -41,6 +42,18 @@ html {
 }
 
 .hidden {
+    visibility: hidden;
+}
+
+.clear-fix {
+    zoom: 1;
+}
+
+.clear-fix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
     visibility: hidden;
 }
 
@@ -264,15 +277,17 @@ html {
 .btn-sign-up:hover {
     background-color: var(--base-color-dark);
     padding: 6px 17px;
-    box-shadow: 0px 0px 21px 29px rgba(29, 5, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgba(29, 5, 0, 0.4);
     transition: all 0.3s ease-in-out;
 }
-.btn-sign-up:active{
+
+.btn-sign-up:active {
     color: var(--base-color-dark);
     background-color: var(--white-color);
     box-shadow: 0px 0px 10px 10px rgba(29, 5, 0, 0.3);
     transition: all 0.3s ease-in-out;
 }
+
 .btn-user {
     padding-bottom: 0px;
 }
@@ -357,26 +372,43 @@ html {
     }
 
     .btn-sidebar {
+        text-decoration: none;
         font-size: 200%;
         color: var(--base-color);
         display: inline !important;
         float: right;
+        border: none;
+        outline: none;
     }
 
     .btn-sidebar:hover {
         font-size: 215%;
         transition: font-size 0.5s, color 0.6s;
-        color: var(--white-color);
+        color: var(--base-color);
+    }
+
+    .btn-sidebar:active {
+        font-size: 200%;
+        transition: font-size 0.5s, color 0.6s;
+        color: var(--base-color-dark);
     }
 
     .btn-toggle {
-        background-color: transparent;
+        background-color: var(--white-color-light);
         border: none;
         position: fixed;
         z-index: 2;
         right: 3vw;
         top: 5vh;
-        margin-top: 14px;
+        padding: 10px 20px;
+        border-radius: 100%;
+        box-shadow: 0px 0px 40px 9px rgba(29, 0, 0, 0.3);
+        border: none;
+        outline: none;
+    }
+
+    .btn-toggle:active {
+        box-shadow: 0px 0px 20px 5px rgba(29, 0, 0, 0.3);
     }
 
     .sidebar {
@@ -531,19 +563,21 @@ html {
 
 .ion-ios-cart-outline:hover,
 .ion-ios-contact-outline:hover {
-    box-shadow: 0px 0px 21px 29px rgba(29, 5, 0, 0.5);
+    box-shadow: 0px 0px 10px 10px rgba(46, 8, 0, 0.5);
     border-radius: 50%;
     font-size: 37px;
     transition: all 0.3s ease-in-out;
 }
+
 .ion-ios-cart-outline:active,
-.ion-ios-contact-outline:active{
+.ion-ios-contact-outline:active {
     color: var(--secondary-color);
     box-shadow: 0px 0px 10px 10px rgba(29, 5, 0, 0.3);
     border-radius: 50%;
     font-size: 36px;
     transition: all 0.3s ease-in-out;
 }
+
 .ui-icon {
     color: var(--white-color);
 }
@@ -677,11 +711,12 @@ html {
 .section-favourite-meals ul {
     width: 100%;
     list-style: none;
-    display: block;
+    display: inline-table;
 }
 
 .section-favourite-meals li {
     display: inline-block;
+    margin: -5px;
 }
 
 .section-favourite-meals img {
@@ -699,6 +734,10 @@ html {
 /*--------------------------------------------------------*/
 /*------------------------ WHAT MAKES US DIFFERENT ? --------------------------*/
 /*--------------------------------------------------------*/
+.section-how-it-works {
+    background-color: var(--white-color-light);
+}
+
 .quality-box:first-child {
     text-align: right;
     padding-right: 3%;
@@ -748,15 +787,18 @@ html {
     margin-right: 10px;
     margin-top: 50px;
 }
-.btn-app img:hover{
+
+.btn-app img:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 1px 9px 20px 9px rgba(29, 5, 0, 0.2);
 
 }
-.btn-app img:active{
+
+.btn-app img:active {
     transform: translateY(3px) scale(1);
     box-shadow: 1px 9px 20px 9px rgba(29, 5, 0, 0.1);
 }
+
 /*Gallery Media Queries*/
 
 @media only screen and (max-width: 900px) and (min-width: 600px) {
@@ -800,9 +842,8 @@ html {
 
 @media only screen and (max-width: 600px) {
     .section-favourite-meals li {
-        display: inline-block;
+        display: grid;
         width: 100%;
-        margin-bottom: 5px;
     }
 
     .quality-box:first-child {
