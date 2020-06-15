@@ -35,7 +35,7 @@ let uiController = (function () {
         sidebarMenuOptions: ".sidebar-menu-options",
         btnApp: ".btn-app",
         appScreen: ".app-screen",
-        dropDownMenuOptions:".dropdown-options",
+        dropDownMenuOptions: ".dropdown-options",
         dropDownMenuOption: ".dropdown-option"
     };
     // for each element of the list of DOM elements i.e nodes run the custom function passeed in second argument
