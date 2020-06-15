@@ -736,6 +736,7 @@ html {
 /*--------------------------------------------------------*/
 .section-how-it-works {
     background-color: var(--white-color-light);
+    padding-bottom: 70px;
 }
 
 .quality-box:first-child {
@@ -866,6 +867,10 @@ html {
     .quality-box:last-child {
         width: 100%;
         padding: 30px;
+    }
+
+    .section-how-it-works {
+        padding-bottom: 0px;
     }
 }
 
