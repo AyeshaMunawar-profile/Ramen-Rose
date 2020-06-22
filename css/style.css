@@ -58,6 +58,25 @@ html {
 }
 
 /*----------------------------------------------------------------*/
+/*------------------------LINKS--------------------------*/
+/*----------------------------------------------------------------*/
+a:link,
+a:visited {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid var(--secondary-color);
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover,
+a:active {
+    color: var(--black-color);
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+/*----------------------------------------------------------------*/
 /*------------------------HEADINGS--------------------------*/
 /*----------------------------------------------------------------*/
 .heading-1,
@@ -786,7 +805,10 @@ html {
 .btn-app {
     text-decoration: none;
 }
-
+.btn-app:link,
+.btn-app:visited{
+    border: 0;
+}
 .btn-app img {
     height: 70px;
     margin-right: 10px;
@@ -807,15 +829,22 @@ html {
 /*--------------------------------------------------------*/
 /*------------------------ Cities Section --------------------------*/
 /*--------------------------------------------------------*/
-.city{
+.city {
     margin-right: 10px;
- }
-.city h3{
+}
+
+.city h3 {
     margin-bottom: 10px;
 }
-.city-feature{
+
+.city-feature {
     text-align: left;
     margin-bottom: 5px;
+}
+
+.city-feature a {
+    text-decoration: none;
+
 }
 
 .section-cities {
@@ -843,21 +872,16 @@ html {
     line-height: 120%;
     vertical-align: middle;
     margin-top: -4px;
+    margin-right: 10px;
     /*align text and icons*/
     /*line-height: 120%;*/
     /*vertical-align: middle;*/
-
-
-
 }
 
 .icon-small:hover {
-color: var(--secondary-color-dark);
+    color: var(--secondary-color-dark);
 
 }
-
-
-
 
 
 /*--------------------------------------------------------*/
@@ -901,6 +925,7 @@ color: var(--secondary-color-dark);
         margin-left: 5% !important;
         margin-bottom: 5%;
     }
+
     .city-feature {
         text-align: center;
     }
@@ -941,6 +966,7 @@ color: var(--secondary-color-dark);
         margin-left: 5% !important;
         margin-bottom: 5%;
     }
+
     .city-feature {
         text-align: center;
     }
