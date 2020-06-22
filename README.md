@@ -12,6 +12,8 @@ A website created using HTML5, CSS3, j query and java script. Its a website for 
 2) Used MVC to create separation of concerns 
 3) Used "Responsive CSS Grid system" to make the website responsive 
 4) Used CSS and Ionicons for better UI experience
+5) Use small icons aligned with some text 
+6) Style links 
 
 **languages, fonts and libraries used**
 1) HTML5 and CSS3
